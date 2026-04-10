@@ -29,7 +29,7 @@ API reference, and learning resources.
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/paperbeam.git
+git clone https://github.com/Sevara1508/paperbeam.git
 cd paperbeam
 npm install
 ```
@@ -37,7 +37,7 @@ npm install
 Start the dev server:
 
 ```bash
-npm run docs:dev
+npm npx vitepress dev 
 ```
 
 Open your browser at `http://localhost:5173`

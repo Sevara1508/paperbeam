@@ -1,39 +1,40 @@
 /* =============================================
 BRAND COLORS
-Sets the global brand color used throughout
-VitePress for links, active states, and accents
+Defines PaperBeam's core color palette and
+the two-tone gradient used in the hero title
 ============================================= */
 
 :root {
-    --vp-c-brand-1: #13b38e; /* primary brand green */
-    --vp-c-brand-2: #13b38e; /* hover/active state green */
-    --vp-c-brand-3: #13b38e; /* subtle/muted brand green */
-    --vp-home-hero-name-color: transparent; /* makes hero name transparent so gradient shows through */
+    --vp-c-brand-1: #13b38e; /* main teal-green used for links and highlights */
+    --vp-c-brand-2: #13b38e; /* same green for hover and active interactions */
+    --vp-c-brand-3: #13b38e; /* lighter usage of the green for muted accents */
+    --vp-home-hero-name-color: transparent; /* transparent so the gradient below is visible */
     --vp-home-hero-name-background: linear-gradient(90deg, #13b38e 0%, #13b38e 29%, #cc3aaf 37%, #cc3aaf 100%);
-    /* gradient goes from solid green (0-29%) to solid pink (37-100%) with a short blend in between */
+    /* hero title sweeps from PaperBeam green into a bold pink with a short crossfade */
     }
     
     
     /* =============================================
     ACTION BUTTONS
-    Styles the two hero buttons on the homepage
+    Controls the appearance of the two call-to-action
+    buttons displayed in the homepage hero section
     ============================================= */
     
-    /* Main green button */
+    /* Primary button — PaperBeam brand green */
     .VPButton.brand {
     background-color: #13b38e !important;
     border-color: #13b38e !important;
     color: white !important;
     }
     
-    /* Secondary grey button - for Reference*/
+    /* Secondary button — neutral grey by default */
     .VPButton.alt {
     background-color: #e9e9ee !important;
     border-color: #e9e9ee !important;
     color: #4a4a57 !important;
     }
     
-    /* Secondary button turns pink when hovered */
+    /* Secondary button glows pink when the user hovers over it */
     .VPButton.alt:hover {
     background-color: #ee9bdd !important;
     border-color: #ee9bdd !important;
@@ -43,16 +44,17 @@ VitePress for links, active states, and accents
     
     /* =============================================
     HERO LAYOUT
-    Controls the layout of the homepage hero section
+    Manages alignment and spacing of the hero
+    section that appears at the top of the homepage
     ============================================= */
     
-    /* Vertically centers hero content and image */
+    /* Aligns the text and image side by side vertically */
     .VPHero .container {
     align-items: center;
     }
     
-    /* Makes image column flexible and centered */
-    /* overflow: visible allows the glow to bleed outside the container */
+    /* Stretches the image column and centers the logo inside it */
+    /* overflow: visible lets the glow effect extend beyond the boundary */
     .VPHero .image {
     flex: 1;
     display: flex;
@@ -61,8 +63,8 @@ VitePress for links, active states, and accents
     overflow: visible !important;
     }
     
-    /* Removes default background and border from image wrapper */
-    /* overflow: visible ensures drop-shadow is not clipped */
+    /* Strips the default box styling from the image wrapper */
+    /* overflow: visible prevents the drop-shadow from getting cut off */
     .VPHero .image-container {
     background: none !important;
     border: none !important;
@@ -71,79 +73,84 @@ VitePress for links, active states, and accents
     
     /* =============================================
     HERO IMAGE
-    Styles the PaperBeam logo in the hero section
+    Sizes and styles the PaperBeam logo displayed
+    on the right side of the homepage hero
     ============================================= */
     .VPHero .image-src {
     max-width: 300px !important;
     width: 300px !important;
-    mix-blend-mode: multiply; /* blends grey background of image with the page background */
-    border-radius: 0 !important; /* removes any default rounding */
+    mix-blend-mode: multiply; /* removes the grey image background by blending with the page */
+    border-radius: 0 !important; /* keeps the logo sharp with no rounded corners */
     filter:
-    drop-shadow(-15px -100px 70px rgba(19, 179, 142, 0.35)) /* green glow above the logo */
-    drop-shadow(40px 50px 80px rgba(200, 75, 184, 0.45)); /* pink glow below-right of the logo */
+    drop-shadow(-15px -100px 70px rgba(19, 179, 142, 0.35)) /* soft green glow radiating above the logo */
+    drop-shadow(40px 50px 80px rgba(200, 75, 184, 0.45)); /* warm pink glow trailing below and to the right */
     }
     
     
-    /* Larger hero text */
+    /* Increases the size and weight of the hero product name */
     .VPHero .name {
     font-size: 64px !important;
     line-height: 1.05 !important;
     font-weight: 800 !important;
     }
     
+    /* Styles the main hero headline below the product name */
     .VPHero .text {
     font-size: 54px !important;
     line-height: 1.05 !important;
     font-weight: 800 !important;
-    /*color: #3f3f46 !important;*/
-    color: var(--vp-c-text-1) !important; /* was: #3f3f46 */
+    color: var(--vp-c-text-1) !important; /* adapts to light and dark mode automatically */
     }
     
+    /* Styles the smaller tagline that sits beneath the headline */
     .VPHero .tagline {
     font-size: 20px !important;
-    /*color: #6b7280 !important;*/
-    color: var(--vp-c-text-2) !important; /* was: #6b7280 */
+    color: var(--vp-c-text-2) !important; /* slightly muted to create visual hierarchy */
     margin-top: 14px;
     }
     
-    /* Feature cards */
+    /* Feature cards on the homepage */
     .VPFeature {
     border: none !important;
-    /*background: #f7f7fa !important;*/
-    background: var(--vp-c-bg-soft) !important; /* was: #f7f7fa */
+    background: var(--vp-c-bg-soft) !important; /* uses theme-aware background for dark mode support */
     border-radius: 18px !important;
     }
     
+    /* Icon box inside each feature card */
     .VPFeature .icon {
-    /*background: #efeff4 !important;*/
-    background: var(--vp-c-bg-mute) !important; /* was: #efeff4 */
+    background: var(--vp-c-bg-mute) !important; /* slightly darker than the card background */
     border-radius: 10px !important;
     padding: 10px !important;
     }
     
-    /* Keep content width nice on doc pages */
+    /* Prevents doc page content from stretching too wide on large screens */
     .VPDoc.has-sidebar .content-container {
     max-width: 900px;
     }
-    /* Light mode code blocks */
+
+    /* Light mode only — sets a soft grey background for code blocks */
     :root:not(.dark) .vp-code,
     :root:not(.dark) div[class*="language-"] {
     background-color: #f6f6f7 !important;
     }
     
+    /* Default code text colour in light mode */
     :root:not(.dark) div[class*="language-"] code {
     color: #393a34 !important;
     }
     
+    /* Muted green for comments so they don't compete with real code */
     :root:not(.dark) div[class*="language-"] .token.comment {
     color: #758575 !important;
     }
     
+    /* Deep green for keywords and function names in light mode */
     :root:not(.dark) div[class*="language-"] .token.keyword,
     :root:not(.dark) div[class*="language-"] .token.function {
     color: #1c6b48 !important;
     }
     
+    /* Warm terracotta for string values in light mode */
     :root:not(.dark) div[class*="language-"] .token.string {
     color: #b56959 !important;
     }
