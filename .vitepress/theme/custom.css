@@ -1,0 +1,149 @@
+/* =============================================
+BRAND COLORS
+Sets the global brand color used throughout
+VitePress for links, active states, and accents
+============================================= */
+
+:root {
+    --vp-c-brand-1: #13b38e; /* primary brand green */
+    --vp-c-brand-2: #13b38e; /* hover/active state green */
+    --vp-c-brand-3: #13b38e; /* subtle/muted brand green */
+    --vp-home-hero-name-color: transparent; /* makes hero name transparent so gradient shows through */
+    --vp-home-hero-name-background: linear-gradient(90deg, #13b38e 0%, #13b38e 29%, #cc3aaf 37%, #cc3aaf 100%);
+    /* gradient goes from solid green (0-29%) to solid pink (37-100%) with a short blend in between */
+    }
+    
+    
+    /* =============================================
+    ACTION BUTTONS
+    Styles the two hero buttons on the homepage
+    ============================================= */
+    
+    /* Main green button */
+    .VPButton.brand {
+    background-color: #13b38e !important;
+    border-color: #13b38e !important;
+    color: white !important;
+    }
+    
+    /* Secondary grey button - for Reference*/
+    .VPButton.alt {
+    background-color: #e9e9ee !important;
+    border-color: #e9e9ee !important;
+    color: #4a4a57 !important;
+    }
+    
+    /* Secondary button turns pink when hovered */
+    .VPButton.alt:hover {
+    background-color: #ee9bdd !important;
+    border-color: #ee9bdd !important;
+    color: white !important;
+    }
+    
+    
+    /* =============================================
+    HERO LAYOUT
+    Controls the layout of the homepage hero section
+    ============================================= */
+    
+    /* Vertically centers hero content and image */
+    .VPHero .container {
+    align-items: center;
+    }
+    
+    /* Makes image column flexible and centered */
+    /* overflow: visible allows the glow to bleed outside the container */
+    .VPHero .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible !important;
+    }
+    
+    /* Removes default background and border from image wrapper */
+    /* overflow: visible ensures drop-shadow is not clipped */
+    .VPHero .image-container {
+    background: none !important;
+    border: none !important;
+    overflow: visible !important;
+    }
+    
+    /* =============================================
+    HERO IMAGE
+    Styles the PaperBeam logo in the hero section
+    ============================================= */
+    .VPHero .image-src {
+    max-width: 300px !important;
+    width: 300px !important;
+    mix-blend-mode: multiply; /* blends grey background of image with the page background */
+    border-radius: 0 !important; /* removes any default rounding */
+    filter:
+    drop-shadow(-15px -100px 70px rgba(19, 179, 142, 0.35)) /* green glow above the logo */
+    drop-shadow(40px 50px 80px rgba(200, 75, 184, 0.45)); /* pink glow below-right of the logo */
+    }
+    
+    
+    /* Larger hero text */
+    .VPHero .name {
+    font-size: 64px !important;
+    line-height: 1.05 !important;
+    font-weight: 800 !important;
+    }
+    
+    .VPHero .text {
+    font-size: 54px !important;
+    line-height: 1.05 !important;
+    font-weight: 800 !important;
+    /*color: #3f3f46 !important;*/
+    color: var(--vp-c-text-1) !important; /* was: #3f3f46 */
+    }
+    
+    .VPHero .tagline {
+    font-size: 20px !important;
+    /*color: #6b7280 !important;*/
+    color: var(--vp-c-text-2) !important; /* was: #6b7280 */
+    margin-top: 14px;
+    }
+    
+    /* Feature cards */
+    .VPFeature {
+    border: none !important;
+    /*background: #f7f7fa !important;*/
+    background: var(--vp-c-bg-soft) !important; /* was: #f7f7fa */
+    border-radius: 18px !important;
+    }
+    
+    .VPFeature .icon {
+    /*background: #efeff4 !important;*/
+    background: var(--vp-c-bg-mute) !important; /* was: #efeff4 */
+    border-radius: 10px !important;
+    padding: 10px !important;
+    }
+    
+    /* Keep content width nice on doc pages */
+    .VPDoc.has-sidebar .content-container {
+    max-width: 900px;
+    }
+    /* Light mode code blocks */
+    :root:not(.dark) .vp-code,
+    :root:not(.dark) div[class*="language-"] {
+    background-color: #f6f6f7 !important;
+    }
+    
+    :root:not(.dark) div[class*="language-"] code {
+    color: #393a34 !important;
+    }
+    
+    :root:not(.dark) div[class*="language-"] .token.comment {
+    color: #758575 !important;
+    }
+    
+    :root:not(.dark) div[class*="language-"] .token.keyword,
+    :root:not(.dark) div[class*="language-"] .token.function {
+    color: #1c6b48 !important;
+    }
+    
+    :root:not(.dark) div[class*="language-"] .token.string {
+    color: #b56959 !important;
+    }
