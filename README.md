@@ -37,6 +37,7 @@ npm install
 Start the dev server:
 
 ```bash
+cd docs
 npm npx vitepress dev 
 ```
 
